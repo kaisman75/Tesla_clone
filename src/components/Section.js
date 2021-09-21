@@ -7,6 +7,14 @@ function Section() {
                 <h1>Model S</h1>
                 <p>Order On Line For Touchless Delevry</p>
             </ItemText>
+            <ButtonGroup>
+                <LeftBtn>
+                   Custom Order 
+                </LeftBtn>
+                <RightBtn>
+                  Existing Inventory
+                </RightBtn>
+            </ButtonGroup>
         </Wrap>
     )
 }
