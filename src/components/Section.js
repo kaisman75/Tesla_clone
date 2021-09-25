@@ -14,7 +14,8 @@ function Section() {
                 <RightBtn>
                   Existing Inventory
                 </RightBtn>
-            </ButtonGroup>
+                <Arrowbtn src='images/down-arrow.svg'
+/>            </ButtonGroup>
         </Wrap>
     )
 }
@@ -38,28 +39,40 @@ text-transform: capitalize;
 `
 const ButtonGroup=styled.div`
 width:50vw;
-height:20vh;
+height:25vh;
 margin: auto;
-margin-bottom: 20px;
-}
+margin-bottom: 10px;
+display: flex;
+flex-direction:column;
+justify-content: center;
+align-items: center;
 `
-const LeftBtn=styled.button`
-width: 35%;
-height: 20%;
+const LeftBtn=styled.div`
+width:256px;
+height: 40px;
 margin: 10px;
 border-radius: 100px;
-background-color: #393c41;
-color: white;
+background-color: rgba(23,26,32,0.8);
+color:white;
 cursor:pointer;
-}
+display:flex;
+justify-content:center;
+align-items:center;
 `
-const RightBtn=styled.button`
-width: 35%;
-height: 20%;
+const RightBtn=styled.div`
+width:256px;
+height: 40px;
 margin: 10px;
 border-radius: 100px;
 background-color:white;
 cursor:pointer;
-
-}
+display:flex;
+justify-content:center;
+align-items:center;
+`
+const Arrowbtn=styled.img`
+widtn:20px;
+height:40px;
+cursor:pointer;
+animation:animateDown infinite 1.5s;
 `
