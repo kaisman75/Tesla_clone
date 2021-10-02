@@ -1,19 +1,22 @@
 import React from 'react'
 import styled from 'styled-components';
 import data from "./carInfo.json";
-function Section() {
+function Section1() {
     const carInfo=data;
     console.log(carInfo);
     return (
         <div className="car">
             {
                 carInfo.map((car) => {
-                    const { title, image } = car;
+                    const {id, title, description,image,range,
+                    time,
+                    topSpeed,
+                    peakPower } = car;
                     return (
-                        <Wrap style={{backgroundImage:`url(./${image})`}}>
+                        <Wrap id={id} style={{backgroundImage:`url(./${image})`}}>
                             <ItemText>
                                 <h1>{title}</h1>
-                                <p>order on line for fouchless delevry</p>
+                                <p>{description}</p>
                             </ItemText>
                             <ButtonGroup>
                                 <LeftBtn>
@@ -35,17 +38,16 @@ function Section() {
 )
 }
 
-export default Section
+export default Section1
 const Wrap = styled.div`
-
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
 height:100vh;
 display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-size: cover;
+flex-direction: column;
+justify-content: space-between;
+background-size: cover;
 `
 const ItemText = styled.div`
 padding-top:15vh;
