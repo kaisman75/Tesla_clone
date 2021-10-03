@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import MenuIcon from '@mui/icons-material/Menu';
 function Header() {
     return (
         <Container>
@@ -7,12 +8,17 @@ function Header() {
             <img src="/images/logo.svg" alt=""/>
            </a> 
            <Menu>
-               <a>model s</a>
-               <a>model y</a>
-               <a>model 3</a>
-               <a>model x</a>
+               <a href="/">model s</a>
+               <a href="./model y">model y</a>
+               <a href="#">model 3</a>
+               <a href="#">model x</a>
          
            </Menu>
+           <RightMenu>
+               <a href="#">Shop</a>
+               <a href="#">tesla Accout</a>
+               <CostumMenu/>
+           </RightMenu>
         </Container>
     )
 }
@@ -28,13 +34,30 @@ display: -ms-flexbox;
 display: flex;
 position: fixed;
 flex-direction: row;
-justify-content: space-around;
+justify-content: space-between;
 flex-wrap: nowrap;
+padding:10px 20px;
 `
 const Menu=styled.div`
 display: flex;
-width: 376px;
+width: 40vw;
 justify-content: space-around;
 flex-direction: row;
-
+ @media(max-width:768px){
+     display:none
+ }
 `
+const RightMenu=styled.div`
+ display: flex;
+ width: 225px;
+ justify-content: space-around;
+ align-items: center;
+  a{
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+`
+const CostumMenu = styled(MenuIcon)`
+cursor:pointer;
+`
+

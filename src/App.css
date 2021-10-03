@@ -40,4 +40,5 @@
 .App a{
   cursor: pointer;
   text-transform: capitalize;
+  text-decoration:none;
 }

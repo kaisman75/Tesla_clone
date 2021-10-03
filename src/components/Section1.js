@@ -1,6 +1,10 @@
 import React from 'react'
 import styled from 'styled-components';
 import data from "./carInfo.json";
+import Fade from 'react-reveal/Fade';
+import Rotate from 'react-reveal/Rotate';
+
+
 function Section1() {
     const carInfo=data;
     console.log(carInfo);
@@ -13,23 +17,35 @@ function Section1() {
                     topSpeed,
                     peakPower } = car;
                     return (
+
                         <Wrap id={id} style={{backgroundImage:`url(./${image})`}}>
+                            
                             <ItemText>
+                               <Rotate >
                                 <h1>{title}</h1>
                                 <p>{description}</p>
+                                </Rotate>
                             </ItemText>
+                            
+                        
                             <ButtonGroup>
+                                <Fade bottom>
                                 <LeftBtn>
                                     Custom Order
                                 </LeftBtn>
                                 <RightBtn>
                                     Existing Inventory
                                 </RightBtn>
-
+                               </Fade>
                             </ButtonGroup>
-                            <Arrowbtn src='/images/down-arrow.svg' />
-
+                           <ArrowSpace>
+                            <Arrowbtn1 src='/images/down-arrow.svg' />
+                            <Arrowbtn2 src='/images/down-arrow.svg' />
+                            
+                            </ArrowSpace>
+                            
                         </Wrap>
+                       
                     )
                 })
 }
@@ -57,7 +73,7 @@ text-transform: capitalize;
 `
 const ButtonGroup = styled.div`
 width:50vw;
-height:25vh;
+height:15vh;
 margin: auto;
 margin-bottom: 10px;
 display: flex;
@@ -93,10 +109,20 @@ align-items:center;
 opacity:0.65;
 color:black;
 `
-const Arrowbtn = styled.img`
+const ArrowSpace=styled.div`
+height:60px;
+display:flex;
+flex-direction: column;
+`
+const Arrowbtn1 = styled.img`
 widtn:20px;
 height:40px;
-cursor:pointer;
 overflow:hidden;
-animation:animateDown infinite 1.5s;
+animation:animateDown infinite 1.2s;
+`
+const Arrowbtn2 = styled.img`
+widtn:20px;
+height:40px;
+overflow:hidden;
+animation:animateDown infinite 1s;
 `
