@@ -36,7 +36,7 @@ function Section1() {
                                 <RightBtn>
                                     Existing Inventory
                                 </RightBtn>
-                               </Fade>
+                                </Fade>
                             </ButtonGroup>
                            <ArrowSpace>
                             <Arrowbtn1 src='/images/down-arrow.svg' />
