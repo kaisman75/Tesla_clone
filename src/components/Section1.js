@@ -34,7 +34,7 @@ function Section1() {
                                     Custom Order
                                 </LeftBtn>
                                 <RightBtn>
-                                    Existing Inventory
+                                      Existing Inventory
                                 </RightBtn>
                                 </Fade>
                             </ButtonGroup>
@@ -64,12 +64,20 @@ display: flex;
 flex-direction: column;
 justify-content: space-between;
 background-size: cover;
+
 `
 const ItemText = styled.div`
+width:30vw;
+margin: 0 auto;
 padding-top:15vh;
 text-aligne:center;
 font-size:12px;
 text-transform: capitalize;
+line-height: 2.5;
+ h1{
+     border-radius:10px ;
+     background-color:rgba(250, 158, 158, 0.671);;
+
 `
 const ButtonGroup = styled.div`
 width:50vw;
@@ -77,12 +85,12 @@ height:15vh;
 margin: auto;
 margin-bottom: 10px;
 display: flex;
-
 justify-content: center;
 align-items: center;
 @media (max-width:786px){
     flex-direction:column;
 }
+z-index:0;
 `
 const LeftBtn = styled.div`
 width:256px;
@@ -95,6 +103,7 @@ cursor:pointer;
 display:flex;
 justify-content:center;
 align-items:center;
+
 `
 const RightBtn = styled.div`
 width:256px;
@@ -108,6 +117,7 @@ justify-content:center;
 align-items:center;
 opacity:0.65;
 color:black;
+
 `
 const ArrowSpace=styled.div`
 height:60px;

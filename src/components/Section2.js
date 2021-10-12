@@ -1,11 +1,11 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
 import Rotate from 'react-reveal/Rotate';
-
 import styled from 'styled-components';
 function Section2() {
     return (
         <Wrap>
+        
             <ItemText>
                 <Rotate>
                     <h1>accessorie</h1>
@@ -39,11 +39,19 @@ justify-content: space-between;
 background-size: cover;
 align-items: center;
 text-transform: capitalize;
+z-index:0;
 `
 const ItemText = styled.div`
+width:30vw;
+margin: 0 auto;
 padding-top:15vh;
 text-aligne:center;
 font-size:12px;
+text-transform: capitalize;
+line-height: 2.5;
+ h1{
+     border-radius:10px ;
+     background-color:rgba(250, 158, 158, 0.671);;
 
 `
 const ButtonGroup = styled.div`
