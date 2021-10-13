@@ -1,9 +1,18 @@
-import React from 'react'
+import React,{useState} from 'react'
 import styled from 'styled-components'
 import MenuIcon from '@mui/icons-material/Menu';
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import { display } from '@mui/system';
+
+
 function Header() {
+    
+    const[style,setStyle]=useState(false);
+   
+    
+    
     return (
-        <Container>
+        <Container >
            <a> 
             <img src="/images/logo.svg" alt=""/>
            </a> 
@@ -17,8 +26,18 @@ function Header() {
            <RightMenu>
                <a href="#">Shop</a>
                <a href="#">tesla Accout</a>
-               <CostumMenu/>
+            <CostumMenu onClick={()=>{setStyle(true)}} />
+             <Navburger Show = {style} >
+                <OffIcon onClick={()=>{setStyle(false)}}>
+                    <HighlightOffIcon/></OffIcon>
+               <li><a href="#">exiting enventory</a></li>
+               <li><a href="#">exiting enventory</a></li>
+               <li><a href="#">exiting enventory</a></li>
+               <li><a href="#">exiting enventory</a></li>
+               <li><a href="#">exiting enventory</a></li>
+           </Navburger>
            </RightMenu>
+          
         </Container>
     )
 }
@@ -26,21 +45,24 @@ function Header() {
 export default Header
 
 const Container=styled.div`
-min-height: 20px;
-min-width: 100vw;
+min-height: 46px;
+min-width: 100%;
 display: -webkit-box;
 display: -webkit-flex;
 display: -ms-flexbox;
 display: flex;
 position: fixed;
 flex-direction: row;
-justify-content: space-between;
 flex-wrap: nowrap;
-padding:10px 20px;
+padding:10px 0px;
+justify-content: space-around;
+z-index:1;
+
 `
 const Menu=styled.div`
 display: flex;
 width: 40vw;
+height:10%;
 justify-content: space-around;
 flex-direction: row;
  @media(max-width:768px){
@@ -56,8 +78,41 @@ const RightMenu=styled.div`
     text-transform: uppercase;
     font-weight: bold;
   }
+  align-items: flex-start
 `
 const CostumMenu = styled(MenuIcon)`
 cursor:pointer;
+display:flex;
 `
+const Navburger=styled.div`
+top:0;
+bottom:0;
+right:0;
+background:white;
+width:300px;
+height: 100vh;
+list-style: none;
+padding: 35px;
+transform: ${props=>props.Show?"translate(0)":"translate(100%)"};
+transition:transform 0.2s;
+flex-direction: column;
+justify-content: flex-start;
+align-items: flex-start;
+position: absolute;
 
+    li {
+        padding: 15px 0;
+        border-bottom: 2px solid rgba(0,0,0,.2);
+        display: flex;
+        font-weight: 600;
+        text-align:start;
+        width:100%;
+    }
+`
+const OffIcon =styled.div`
+text-aligne:right;
+width: 100%;
+text-align:right;
+cursor:pointer;
+z-index:10;
+`

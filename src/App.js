@@ -7,7 +7,8 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-    <Header />
+    {/*--------ce ci est l'entete de la page---------*/}  
+    <Header/>
     <Home/>
     </div>
   );
