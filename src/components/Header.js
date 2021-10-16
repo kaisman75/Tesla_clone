@@ -3,14 +3,13 @@ import styled from 'styled-components'
 import MenuIcon from '@mui/icons-material/Menu';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import { display } from '@mui/system';
-
+import{useSelector} from 'react-redux';
 
 function Header() {
-    
+    const carInfo=useSelector(state=>state) 
     const[style,setStyle]=useState(false);
    
-    
-    
+
     return (
         <Container >
            <a> 
@@ -28,14 +27,21 @@ function Header() {
                <a href="#">tesla Accout</a>
             <CostumMenu onClick={()=>{setStyle(true)}} />
              <Navburger Show = {style} >
-                <OffIcon onClick={()=>{setStyle(false)}}>
-                    <HighlightOffIcon/></OffIcon>
-               <li><a href="#">exiting enventory</a></li>
-               <li><a href="#">exiting enventory</a></li>
-               <li><a href="#">exiting enventory</a></li>
-               <li><a href="#">exiting enventory</a></li>
-               <li><a href="#">exiting enventory</a></li>
-           </Navburger>
+                    <OffIcon onClick={()=>{setStyle(false)}}>
+                    <HighlightOffIcon/>
+                    </OffIcon>
+                
+                    {
+                    carInfo.map((car) => {
+                        const {id, title} = car;
+                        return(
+                            <li id={id}><a href="#">{title}</a></li>
+                        )
+                    }
+                    )
+               }
+               
+               </Navburger>
            </RightMenu>
           
         </Container>

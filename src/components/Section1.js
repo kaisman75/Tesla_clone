@@ -1,16 +1,29 @@
 import React from 'react'
 import styled from 'styled-components';
-import data from "./carInfo.json";
 import Fade from 'react-reveal/Fade';
 import Rotate from 'react-reveal/Rotate';
+import{useSelector} from 'react-redux';
+
+
+
+
+
+
 
 
 function Section1() {
-    const carInfo=data;
-    console.log(carInfo);
+ 
+ const carInfo=useSelector(state=>state)
+  
     return (
+        
+
+      
+        
         <div className="car">
-            {
+            
+        
+        {
                 carInfo.map((car) => {
                     const {id, title, description,image,range,
                     time,
